@@ -1,0 +1,25 @@
+table{
+    color: white;
+    text-align: start;
+    width: 100%;
+}
+
+table,th, td, tr{
+    border-collapse: collapse;
+    border-bottom: 1px solid white;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+thead tr th{
+    background-color: rgb(16, 86, 228);
+    border: 1px solid transparent;
+    color: #fff;
+    border-radius: 10px;
+    
+    text-transform: uppercase;
+}
+
+.obesidade{
+    text-align: center;
+}
