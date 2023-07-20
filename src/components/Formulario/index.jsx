@@ -9,6 +9,7 @@ function Formulario() {
     function calculaImc() {
         const pesoFloat = parseFloat(peso);
         const alturaFloat = parseFloat(altura);
+
         if (isNaN(pesoFloat) || isNaN(alturaFloat) || pesoFloat <= 0 || alturaFloat <= 0) {
             setImc("Adicione valores válidos nos campos de peso e altura");
         } else {
@@ -21,8 +22,8 @@ function Formulario() {
         setPeso("")
         setImc(null)
     }
-    useEffect(() => {
 
+    useEffect(() => {
     }, [imc]);
 
     return (
@@ -36,8 +37,6 @@ function Formulario() {
                 <button onClick={limparInput}>Limpar</button>
             </div>
             <span className={styles.imc}>{imc === null ? 'Seu IMC: 0' : `Seu IMC: ${imc}`}</span>
-
-            
         </div>
     )
 }

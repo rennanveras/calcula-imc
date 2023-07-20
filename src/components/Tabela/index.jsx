@@ -3,7 +3,6 @@ import styles from "./table.module.css"
 
 function Tabela() {
 
-
     return (
         <>
             <table>
