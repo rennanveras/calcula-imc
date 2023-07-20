@@ -9,13 +9,13 @@ function Formulario() {
     function calculaImc() {
         const pesoFloat = parseFloat(peso);
         const alturaFloat = parseFloat(altura);
-        if(!pesoFloat && !alturaFloat){
-            setImc("Adicione um valor nos campos")
-        }else{
-            setImc((pesoFloat / (alturaFloat * alturaFloat)).toFixed(1))
+        if (isNaN(pesoFloat) || isNaN(alturaFloat) || pesoFloat <= 0 || alturaFloat <= 0) {
+            setImc("Adicione valores válidos nos campos de peso e altura");
+        } else {
+            setImc((pesoFloat / (alturaFloat * alturaFloat)).toFixed(1));
         }
-        
     }
+    
     function limparInput(){
         setAltura("")
         setPeso("")
@@ -35,7 +35,8 @@ function Formulario() {
                 <button onClick={calculaImc}>Calcular</button>
                 <button onClick={limparInput}>Limpar</button>
             </div>
-            <span className={styles.imc}>{imc === null || NaN ? 'Seu Imc:  0': `Seu Imc:  ${imc}`}</span>
+            <span className={styles.imc}>{imc === null ? 'Seu IMC: 0' : `Seu IMC: ${imc}`}</span>
+
             
         </div>
     )
